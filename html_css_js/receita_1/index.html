@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .column {
+            float: left;
+            padding: 5px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #customers {
+          font-family: sans-serif;
+          width: 100px;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #000000;
+          padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 14px;
+          padding-bottom: 14px;
+          text-align: center;
+          background-color: #230064;
+          color: white;
+        }
+    </style>
+    <head>
+        <title>
+            POESIAS
+        </title>
+    </head>
+   <body>
+      <img src="https://akamai.sscdn.co/uploadfile/letras/playlists/3/a/b/9/3ab92363f7974d679f4194de9f389b5b.jpg" width="200"/>
+      <h1>Uma trova...</h1>
+      <p>
+         Eu só preciso de hoje<br/>      
+         Pra viver e ser feliz<br/>
+         O passado já me foge<br/>
+         E o futuro nada diz!<br/>
+      </p>
+      <br/>
+      <p>
+         Autor: Francisco Borges
+      </p>
+      <div class="row">
+        <div class="column">
+            <table id="customers">
+                <tr>
+                    <th>BEBIDAS</th>
+                    <th>PREÇO</th>
+                </tr>
+                <tr>
+                    <td><a href="https://bretas.vtexassets.com/arquivos/ids/182979-1600-auto?v=638375498920130000&width=1600&height=auto&aspect=true" target="_blank"> SODA </a></td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://dcdn.mitiendanube.com/stores/002/905/426/products/gin-tanqueray-imported-750ml-85abef9bd0684090e416970428558546-640-0.webp" target="_blank"> GIN </a></td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.academiaassai.com.br/sites/default/files/styles/noticia_1020x640/public/dia_do_milk_shake_como_criar_um_menu_com_sabores_diferentes.jpg?itok=PG7TB_iU" target="_blank"> MILKSHAKE </a></td>
+                    <td>$20</td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <table id="customers">
+                <tr>
+                    <th>BEBIDAS</th>
+                    <th>PREÇO</th>
+                </tr>
+                <tr>
+                    <td><a href="https://andinacocacola.vtexassets.com/arquivos/ids/157657-1600-auto?v=638404085825130000&width=1600&height=auto&aspect=true" target="_blank"> COCA </a></td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/7111-tequila-sombrero-negro-gold-750ml.20230921150553.jpg?s=1c0a7504cf5f07f68f483bef53b7fc7c" target="_blank"> TEQUILA </a></td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td><a href="https://i0.wp.com/cdbom.com.br/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-12-at-20.43.313.jpeg?fit=500%2C500&ssl=1" target="_blank"> GUARANÁ DO AMAZONAS </a></td>
+                    <td>$20</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+   </body>     
+</html>
