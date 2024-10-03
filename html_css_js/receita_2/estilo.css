@@ -1,0 +1,52 @@
+p.verso{
+    color: blue;
+}
+
+p.mote{
+    color: red;
+}
+
+
+/* unvisited link */
+a:link {
+    color: rgb(121, 45, 245);
+}
+  
+/* visited link */
+a:visited {
+    color: green;
+}
+  
+/* mouse over link */
+a:hover {
+    color: rgb(255, 0, 128);
+}
+  
+/* selected link */
+a:active {
+    color: blue;
+}
+
+img.border {
+    border-radius: 50%;
+}
+
+.poeta img {
+    border-radius: 50%;
+}
+  
+th.cabecote {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: center;
+    background-color: #230064;
+    color: white;
+}
+
+table.tabela {
+    font-family: sans-serif;
+    width: 600px;
+    height: 125px;
+  }
