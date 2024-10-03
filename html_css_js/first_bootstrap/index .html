@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Bilheteria</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAABAlBMVEX////73Wv83mv/4W37phb/5G6+qFaio6MAChIACyTz12mSkpMrLSsBGyrpnRgAAAAHFCWJeUIPGSaUgkUcGyM4Ny0lJCYFDhf74W/7sSw/NCg/PC8jJikAACKrlUyai0sAGCqqq6wOFBjt7e2JiosAAB7Ly8wRGiLckxrY2dm4ubkAAAr/rhSxeB8AEyoTHyoaHiHbwV/RuFxxc3Q7PT9QUVQxNDZZW1wADStuTyWSaCNZRCaIXyPMix1jSiV8fX+icSBwTRn//PL+7Nf/3bTqwIq8hiq9fx1ZTzP/2GCQbS57bj0zIx+pmWL7y1P944ZtYTrv2Ib7uz7Ppkb//ePp48/BScYCAAAD0ElEQVRoge2YWXeaQBSAy6ZowDFEG2NGS1DBuMBETcy+dVFrm6Zp+v//SgdBhZFNQh56Dt8L50zwO5fLnTuXfPiQkpKSkpKyQeO403kH7XEnOzw9U0AXqMlJGw012xwrAPCKpkmyDvlsIlq10xyPYNfUGqJ8LlYvLvvtqnb3NutxZ2c4whngFSSJsgirV9f9mwLbY1m2d6udxrWq2bvxGQBdnAJD1mVoXN9P2lhrehf0Lg2wtVY9ao6hwvO8pomibECcgkm7L+qFldamr0eX4xQ0hyMErMTqumEm9saOta3LNyzJQ5QXuqgtAWd2X5NEM7NX1/fY6kgBWzgX+xvy3mNgrGZioZVYXFtG9eoBJ9YpXQHP7zcXP/sn1qotZODikheJdQfrpu3hZr9sJBbXFgBAURCCJra2EIevDZOlu2OmwJIuEQSIY48JrikeLFvMjgJz8YFQIlZkWYbKzlK+X87Ep2jMiZVvk0nZIT9kYkPXinXOtcIdsL3qvkNOUzGhKSxnXEuVA5ZNTK6/m5zipsUT968TlFN03h14onKK/G2gnN6oiOTkdP4TQT3wubZKC7dbK7pp1QNi3+6FMpnSR4IT/9C3LUW869wEJT3KJmJcsRFyf3UUuVIeUFyQYlv5jbBqXE0e5oS9kIKLKq/Qs++CDPmmLVfPENBy82XsNBcC4y+vzA4KP0QE0Nl6YmyoY/DTltP5vRAyjJ+88oQPbQOM1dUpt+SX9ea4eU0KpNjK095y7O5dGOCINGMeZ4s7mEEpGOnZGTndqq0jx/OArHgPor+tm8JPH+cb5erPqwfBSbkU0UZKTI7APE7FMNzSXXlh2Vtt7Bn4EO+lGPI1i93jM54PtWkcOb2uFRz5lTb0lI8kq9S3qnNcuQNHsbAPxsjL3enmrALeqs4prtbKOKplInc9PucaPBIWPQrXeTEY/zrHeREQv1EuHQXVrOdjBkI5EOHZ0eSIHYp7lo4UZ+wN/O0AUK1u/4Zs5yRUUG95YfvnCIyGzWX4OwBJOWGwjifM7i+nKtTTH0HWEFj3czjPUAm1XKrCHUwenFPuIcfEnFy8D4uAQfQN/dyWB8wtuyH49/NQeWg/l5x1TjHOTRQqZwbk2EJQmjsPc+aEcIfMLWE5dw8KNFlmiU65JEnK14dF8nKuPs9HH0S3hHEe0AnLI9V5UI9yXD3uML9DXSsb8rwPjKm0r4z3LVhOuVeIKRcK3sAMN+OmUIDP3Iyeet8FvZbXXTELeB/A8PX1L/5rt2RdowNW/4w6yvphnicqvh7b18h4zYspKSkpKf8p/wATArIRmLTsSgAAAABJRU5ErkJggg==" width="30" height="30" class="d-inline-block align-top" alt="">
+        Bilheteria
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#horarios">Horários de Transporte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bilhetes">Comprar Bilhete</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"> Conta </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Histórico</a></li>
+              <li><a class="dropdown-item" href="#">Sair</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="section" id="home">
+      <h2>Bem-vindo à nossa plataforma!</h2>
+      <p>Explore os horários e compre bilhetes facilmente.</p>
+    </div>
+
+    <div class="section" id="horarios">
+      <h2>Horários de Transporte</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Horário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estação A</td>
+            <td>Estação B</td>
+            <td>08:00</td>
+          </tr>
+          <tr>
+            <td>Estação A</td>
+            <td>Estação C</td>
+            <td>09:00</td>
+          </tr>
+          <tr>
+            <td>Estação B</td>
+            <td>Estação C</td>
+            <td>10:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section" id="bilhetes">
+      <h2>Comprar Bilhete</h2>
+      <form>
+        <div class="mb-3">
+          <label for="origem" class="form-label">Origem</label>
+          <input type="text" class="form-control" id="origem" placeholder="Digite a estação de origem">
+        </div>
+        <div class="mb-3">
+          <label for="destino" class="form-label">Destino</label>
+          <input type="text" class="form-control" id="destino" placeholder="Digite a estação de destino">
+        </div>
+        <div class="mb-3">
+          <label for="data" class="form-label">Data e Hora</label>
+          <input type="datetime-local" class="form-control" id="data">
+        </div>
+        <button type="submit" class="btn btn-primary">Comprar Bilhete</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white mt-4 p-3 text-center">
+      <p>&copy; 2024 Bilheteria. Minha primeira página Bootstrap. Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
