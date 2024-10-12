@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <style>
+         #meuAmor {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+         }
+         .fade-out {
+            opacity: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="divBotaoCarregar">
+         <button id="botaoCarregar">Carregando cervejas...</button>
+      </div>
+      <div id="meuAmor"></div>
+   </body> 
+   <script>
+      let exibindoCerveja = false;
+
+      function carregarDiv() {
+         let div = document.getElementById("meuAmor");
+         div.classList.remove('fade-out');
+         div.innerHTML = `<h1>Guinness</h1>`;
+         div.style.opacity = 1; 
+
+         exibindoCerveja = true;
+      }
+
+      function apagarDiv() {
+         let div = document.getElementById("meuAmor");
+         div.classList.add('fade-out');
+
+         setTimeout(() => {
+            div.innerHTML = '';
+         }, 100);
+         exibindoCerveja = false;
+      }
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", () => {
+         if (!exibindoCerveja) {
+            carregarDiv();
+         } else {
+            apagarDiv();
+         }
+      })
+   </script>
+</html>
