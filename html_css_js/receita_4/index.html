@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <script src="https://cdn.tailwindcss.com"></script>      
+   </head>
+   <body>
+      <div id="meu amor">
+         <button id="botaoCarregar" class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Carregando cervejas...</button> 
+         <button id="botaoOrdenar" class="bg-green-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Ordenando cervejas...</button> 
+         <button id="botaoEmbaralhar" class="bg-red-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Embaralhando cervejas...</button>
+      </div>     
+   </body>   
+
+   <script>
+        let cervejas = ["Guiness", "Desperados", "Becks"]
+        
+        function transformar(item){
+            //return `<h1>${item}</h1>`
+            //return `<div class="bg-yellow-300 p-4 m-2 rounded-lg text-xl font-semibold inline-block">${item}</div>`
+            return `<tr class="border-b">
+                        <td class="p-4 text-center">${item}</td>
+                    </tr>`
+        }
+
+        function carregarDiv(){
+            let div = document.getElementById("meu amor")
+            //let cervejasHtml = [`<h1>${cervejas[0]}</h1>`,`<h1>${cervejas[1]}</h1>`, `<h1>${cervejas[2]}</h1>`] 
+            //let cervejasHtml = cervejas.map(transformar)
+            let cervejasHtml = `
+                <table class="table-auto border-collapse border border-gray-400 mt-4 ml-4">
+                    <thead>
+                        <tr class="bg-yellow-300">
+                            <th class="px-4 py-2">Cervejas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${cervejas.map(transformar).join("\n")}
+                    </tbody>
+                </table>`
+            //div.innerHTML = `${cervejasHtml.join("\n")}`
+            div.innerHTML = cervejasHtml
+        }
+
+        function carregarTabelaOrdenada(){
+            cervejas.sort();
+            carregarDiv();
+        }
+
+        function embaralharCervejas(){
+            cervejas.sort(() => Math.random() - 0.5);
+            carregarDiv();
+        }
+      
+
+      let botaoCarregar = document.getElementById("botaoCarregar")
+      botaoCarregar.addEventListener("click", carregarDiv)
+
+      let botaoOrdenar = document.getElementById("botaoOrdenar")
+      botaoOrdenar.addEventListener("click", carregarTabelaOrdenada)
+      
+      let botaoEmbaralhar = document.getElementById("botaoEmbaralhar")
+      botaoEmbaralhar.addEventListener("click", embaralharCervejas)
+   </script>
+</html>
