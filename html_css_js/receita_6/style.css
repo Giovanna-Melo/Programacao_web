@@ -1,0 +1,30 @@
+table.tabela {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.b-1_p-12_t-c {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th.yh {
+    background-color: #f4b41a;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even).bc-f9 {
+    background-color: #f9f9f9;
+}
+
+tr:hover.bc-f1 {
+    background-color: #f1f1f1;
+}
+
+td.fs-14 {
+    font-size: 14px;
+}

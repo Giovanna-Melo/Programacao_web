@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+        <meta charset="UTF-8"> 
+        <link href="style.css" rel="stylesheet">     
+   </head>
+   <body>
+        <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+        <div id="cervejasDiv"></div>            
+   </body>   
+
+   <script>
+        let cervejas = [
+            {
+                name: "Guiness",
+                alcohol: "10%",
+                style:"Lager",
+                ibu: "15"
+            }, 
+            {
+                name: "Desperados",
+                alcohol: "6%",
+                style:"APA",
+                ibu: "30"
+            }, 
+            {
+                name: "Becks",
+                alcohol: "5%",
+                style:"Pilsen",
+                ibu: "45"
+            }
+        ]
+        //cs é um array de cervejas
+        /*const carregarDiv = (cs) => {
+            const div = document.getElementById("cervejasDiv")
+            const itensHtml = cs.map( item => `<div>${item.name} -- ${item.alcohol}</div>` ) 
+            //const itensHtml = cs.map( ({name,alcohol}) => `<div>${name} -- ${alcohol}</div>` )
+            //const itensHtml = cs.map( item => `<div>${item['name']} -- ${item['alcohol']}</div>` ) 
+            div.innerHTML = `${itensHtml.join("\n")}`
+        }*/
+
+        const carregarDiv = (cs, idDiv = "cervejasDiv", columns = ["Nome", "Álcool", "Estilo", "Amargor"], properties = ["name", "alcohol", "style", "ibu"]) => {
+            const div = document.getElementById(idDiv)
+            const cervejasHtml = `
+                <table class="tabela">
+                    <thead>
+                        <tr class="bc-f9 bc-f1">
+                            ${columns.map(columnName => `<th class="b-1_p-12_t-c yh">${columnName}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${cs.map(item => `
+                            <tr class="bc-f9 bc-f1">
+                                ${properties.map(prop => `<td class="b-1_p-12_t-c fs-14">${item[prop] || ""}</td>`).join('')}                              
+                            </tr>`).join("\n")}
+                    </tbody>
+                </table>`
+            div.innerHTML = cervejasHtml
+        }
+        
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click", () => carregarDiv(cervejas) )                 
+   </script>
+</html>
