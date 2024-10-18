@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <script src="https://cdn.tailwindcss.com"></script>      
+   </head>
+   <body>
+      <div id="meu amor">
+         <a href="#" id="linkCarregar" class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2 inline-block">Carregar sorvetes</a> 
+         <a href="#" id="linkOrdenar" class="bg-green-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2 inline-block">Ordenar sorvetes</a> 
+         <a href="#" id="linkEmbaralhar" class="bg-red-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2 inline-block">Embaralhar sorvetes</a>
+      </div>     
+   </body>   
+
+   <script>
+        let sorvetes = ["Chocolate", "Baunilha", "Flocos", "Nata uva", "Abacaxi ao vinho", "Chiclete com banana", "Napolitano"];
+
+        const carregarDiv = (sorvs) => {
+            const div = document.getElementById("meu amor")
+            const sorvetesHtml = `
+                <table class="table-auto border-collapse border border-gray-400 mt-4 ml-4">
+                    <thead>
+                        <tr class="bg-yellow-300">
+                            <th class="px-4 py-2">Sorvetes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sorvs.map(item =>`<tr class="border-b"> <td class="p-4 text-center">${item}</td> </tr>`).join("\n")}
+                    </tbody>
+                </table>`
+            div.innerHTML = sorvetesHtml
+        }
+
+        const carregarTabelaOrdenada = (sorvs) => {
+            sorvs.sort()
+            carregarDiv(sorvs)
+        }
+
+        const embaralharSorvetes = (sorvs) => {
+            sorvs.sort(() => Math.random() - 0.5)
+            carregarDiv(sorvs)
+        }
+
+        let linkCarregar = document.getElementById("linkCarregar")
+        linkCarregar.addEventListener("click", (event) => {
+            event.preventDefault()
+            carregarDiv(sorvetes)
+        })
+
+        let linkOrdenar = document.getElementById("linkOrdenar")
+        linkOrdenar.addEventListener("click", (event) => {
+            event.preventDefault()
+            carregarTabelaOrdenada(sorvetes)
+        })
+        
+        let linkEmbaralhar = document.getElementById("linkEmbaralhar")
+        linkEmbaralhar.addEventListener("click", (event) => {
+            event.preventDefault()
+            embaralharSorvetes(sorvetes)
+        })
+   </script>
+</html>

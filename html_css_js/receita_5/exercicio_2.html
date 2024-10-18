@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <script src="https://cdn.tailwindcss.com"></script>      
+   </head>
+   <body>
+      <div id="meu amor">
+         <button id="botaoCarregar" class="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Carregando sorvetes...</button> 
+         <button id="botaoOrdenar" class="bg-green-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Ordenando sorvetes...</button> 
+         <button id="botaoEmbaralhar" class="bg-red-500 text-white font-bold py-2 px-4 rounded mt-2 ml-2">Embaralhando sorvetes...</button>
+      </div>     
+   </body>   
+
+   <script>
+        let sorvetes = ["Chocolate", "Baunilha", "Flocos", "Nata uva", "Abacaxi ao vinho", "Chiclete com banana", "Napolitano"];
+
+        const carregarDiv = (sorvs) => {
+            const div = document.getElementById("meu amor")
+            const sorvetesHtml = `
+                <table class="table-auto border-collapse border border-gray-400 mt-4 ml-4">
+                    <thead>
+                        <tr class="bg-yellow-300">
+                            <th class="px-4 py-2">Sorvetes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sorvs.map(item =>`<tr class="border-b"> <td class="p-4 text-center">${item}</td> </tr>`).join("\n")}
+                    </tbody>
+                </table>`
+            div.innerHTML = sorvetesHtml
+        }
+
+        const carregarTabelaOrdenada = (sorvs) => {
+            sorvs.sort()
+            carregarDiv(sorvs)
+        }
+
+        const embaralharSorvetes = (sorvs) => {
+            sorvs.sort(() => Math.random() - 0.5)
+            carregarDiv(sorvs)
+        }
+
+        let botaoCarregar = document.getElementById("botaoCarregar")
+        botaoCarregar.addEventListener("click", () => carregarDiv(sorvetes))
+
+        let botaoOrdenar = document.getElementById("botaoOrdenar")
+        botaoOrdenar.addEventListener("click", () => carregarTabelaOrdenada(sorvetes))
+        
+        let botaoEmbaralhar = document.getElementById("botaoEmbaralhar")
+        botaoEmbaralhar.addEventListener("click", () => embaralharSorvetes(sorvetes))
+   </script>
+</html>
