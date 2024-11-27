@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ReactZero</title>      
+    </head>
+    <body>
+        <div id="app">
+        </div>
+        <script src="libs/react.js"></script>
+        <script src="libs/react-dom.js"></script>
+        <script>
+            ReactDOM.render(
+                React.createElement(
+                    'h1',
+                    {id: 'my-heading'},
+                    React.createElement(
+                        'span',
+                        null,
+                        'React ',
+                        React.createElement('em', null, 'é muito'),
+                    ),
+                    ' massa!'
+                ),
+                document.getElementById('app')
+            );
+
+            ReactDOM.render(
+                React.createElement('div', null, 
+                    React.createElement('h2', null, 'Tabela de Sorvetes'),
+                    React.createElement('table', null, 
+                        React.createElement('thead', null, 
+                            React.createElement('tr', null, 
+                                React.createElement('th', null, 'Sabor'),
+                                React.createElement('th', null, 'Preço'),
+                            )
+                        ),
+                        React.createElement('tbody', null, 
+                            React.createElement('tr', null, 
+                                React.createElement('td', null, 'Flocos'),
+                                React.createElement('td', null, '30,00'),
+                            ),
+                            React.createElement('tr', null, 
+                                React.createElement('td', null, 'Nata uva'),
+                                React.createElement('td', null, '25,00'),
+                            ),
+                        )
+                    ),
+                ),
+                document.getElementById('app')
+            );
+            
+        </script>
+    </body>
+</html>
