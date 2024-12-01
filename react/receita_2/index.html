@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ReactZero</title>  
+        <script src="https://cdn.tailwindcss.com"></script>    
+    </head>
+    <body class="bg-gray-100 font-sans text-gray-900 p-6">
+        <div id="app">
+            <button id="tabelaCachaca" class="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-md">
+                Tabela de cachaças
+            </button>
+        </div>
+        <script src="../libs/react.js"></script>
+        <script src="../libs/react-dom.js"></script>
+        <script src="../libs/babel.js"></script>
+        <script type="text/babel">
+
+            const cachacas = [
+                {nome: "Cachaça Havana", marca: "Engenho Anísio Santiago", preco: "R$ 79,90"},
+                {nome: "Cachaça 51", marca: "51", preco: "R$ 29,90"},
+                {nome: "Cachaça Pitú", marca: "Pitú", preco: "R$ 34,90"},
+                {nome: "Cachaça Samanaú", marca: "Samanaú", preco: "R$ 89,90"}
+            ]
+
+            function Cabecalho() {
+                return (
+                    <h1 class="text-4xl font-bold text-center text-orange-400 mb-6">
+                        Minha tabela de bebidas
+                    </h1>
+                );
+            }
+
+            function TabelaBebidas() {
+                return (
+                    <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+                        <thead>
+                            <tr className="bg-orange-600 text-white">
+                                <th className="px-6 py-3 text-left">Nome</th>
+                                <th className="px-6 py-3 text-left">Marca</th>
+                                <th className="px-6 py-3 text-left">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cachacas.map((cachaca, index) => (
+                                <tr key={index} className="hover:bg-gray-100">
+                                    <td className="px-6 py-4">{cachaca.nome}</td>
+                                    <td className="px-6 py-4">{cachaca.marca}</td>
+                                    <td className="px-6 py-4">{cachaca.preco}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                );
+            }
+
+            let botao = document.getElementById("tabelaCachaca")
+
+            botao.addEventListener("click", () => {
+                ReactDOM.render(
+                    <div>
+                        <Cabecalho/>
+                        <TabelaBebidas/>
+                    </div>,
+                    document.getElementById("app")
+                )
+            })
+
+            /*ReactDOM.render(
+                <div id="app">
+                    <table id="tabela" border="1">
+                        <thead>
+                            <tr><th>Nome</th><th>Marca</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                ,
+                document.getElementById("app")
+            )*/
+        </script>
+    </body>
+</html>
