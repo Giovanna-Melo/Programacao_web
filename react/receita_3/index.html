@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ReceitaReact - Classes</title>      
+   </head>
+
+   <body>
+      <div id="app">
+      </div>
+
+      <script src="../libs/react.js"></script>
+      <script src="../libs/react-dom.js"></script>
+      <script src="../libs/babel.js"></script>
+      <script type="text/babel">
+
+        /*const TabelaBebidas = () => {
+            return (
+                <div>
+                    <h1>Tabela de Bebidas</h1>
+                    <table id="tabela" border="1">
+                        <thead>
+                            <tr><th>Nome</th><th>Marca</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                        </tbody>
+                    </table>
+                </div>   
+            )            
+        }*/
+
+        class TabelaBebidas extends React.Component{
+            render() {
+                return (
+                    <div>
+                        <h1>{this.props.titulo}</h1>
+                        <table id="tabela1" border="1">
+                            <thead>
+                                <tr><th>Nome</th><th>Marca</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                            </tbody>
+                        </table>
+                    </div>   
+                )
+            }
+        }   
+
+        class TabelaSobremesas extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>{this.props.titulo}</h1>
+                        <table id="tabela2" border="1">
+                            <thead>
+                                <tr><th>Nome</th><th>Preço</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Bolo de chocolate</td><td>25</td></tr>
+                                <tr><td>Brownie</td><td>30</td></tr>
+                                <tr><td>Sorvete</td><td>20</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                )
+            }
+        }
+
+        class PaginaPrincipal extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <TabelaBebidas titulo="Tabela de Cana" />
+                        <TabelaSobremesas titulo="Tabela de Sobremesas" />
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <PaginaPrincipal/>,
+            document.getElementById("app")
+        )
+        </script>
+    </body>
+</html>
