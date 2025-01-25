@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default async function Home({ params }) {
     const {id} = await params
@@ -7,8 +8,23 @@ export default async function Home({ params }) {
     return (
         <div>
             <h1>{movie.Title} ({movie.Year})</h1>
-            <p>Director: {movie.Director}</p>
-            <p>Plot: {movie.Plot}</p>
+            <div>
+                {movie.Poster && movie.Poster !== "N/A" ? (
+                    <Image
+                        src={movie.Poster}
+                        alt={`${movie.Title} Poster`}
+                        width={300}
+                        height={450}
+                        className="rounded shadow-md"
+                    />
+                ) : (
+                    <p>Poster não disponível</p>
+                )}
+            </div>
+            <div>
+                <p>Director: {movie.Director}</p>
+                <p>Plot: {movie.Plot}</p>
+            </div>
         </div>
     );
 };
