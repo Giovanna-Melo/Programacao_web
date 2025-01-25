@@ -2,6 +2,7 @@
 
 import Form from "next/form"
 import {useState} from "react"
+import Link from "next/link" 
 
 export default function Home() {
     const [resultMovies, setResultMovies] = useState([])
@@ -62,6 +63,7 @@ export function MovieTable({ movies }) {
                         <th className="px-4 py-2 text-left">Título</th>
                         <th className="px-4 py-2 text-left">Ano</th>
                         <th className="px-4 py-2 text-left">Poster</th>
+                        <th className="px-4 py-2 text-left">Detalhes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,6 +75,13 @@ export function MovieTable({ movies }) {
                                 {m.Poster !== "N/A" && (
                                     <img src={m.Poster} alt={m.Title} className="w-20 h-auto" />
                                 )}
+                            </td>
+                            <td className="px-4 py-2">
+                                <Link href={`/movie/${m.imdbID}`}>
+                                    <a className="text-blue-500 underline hover:text-blue-700">
+                                        Ver Detalhes
+                                    </a>
+                                </Link>
                             </td>
                         </tr>
                     ))}

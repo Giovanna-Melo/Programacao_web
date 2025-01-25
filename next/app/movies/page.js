@@ -1,3 +1,5 @@
+import Link from "next/link" 
+
 /* Abordagem alternativa
 function transformar(elemento){
     return (<div>{elemento.Title} --- {elemento.Year}</div>) 
@@ -17,6 +19,11 @@ export default async function Home({searchParams}){
                         <div>
                             <img src={m.Poster !== "N/A" ? m.Poster: "/placeholder.jpg"} alt={m.Title} width="150" />
                         </div>
+                        <Link href={`/movie/${m.imdbID}`}>
+                            <a className="text-blue-500 underline">
+                                Ver Detalhes
+                            </a>
+                        </Link>
                     </div>
                 )}                
             </div>

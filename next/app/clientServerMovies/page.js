@@ -2,7 +2,8 @@
 
 import {searchMovies} from "../actions/movieActions"
 import Form from "next/form"
-import {useState} from "react" 
+import {useState} from "react"
+import Link from "next/link"  
 
 export default function Home(){
     const [data, setData] = useState({})
@@ -40,7 +41,15 @@ export function MovieTable({movies}){
     return (
         <div>
             <div>
-                {movies.map( (m) => <div key={m.imdbID}>{m.Title} --- {m.Year}</div>  )}               
+                {movies.map( (m) => 
+                <div 
+                    key={m.imdbID}>{m.Title} --- {m.Year}
+                    <Link href={`/movie/${m.imdbID}`}>
+                        <a className="text-blue-500 underline">
+                            Ver Detalhes
+                        </a>
+                    </Link>
+                </div>  )}               
             </div>
         </div>
     )
